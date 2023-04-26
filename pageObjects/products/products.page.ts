@@ -13,6 +13,11 @@ class ProductPage {
   }
 
   // Locators
+  private filterProductsInput = (): Locator =>
+    this.page.getByPlaceholder("Filter by product name");
+  private filterProductsButton = (): Locator =>
+    this.page.getByTestId("filter-button");
+  productRows = () => this.page.locator("tbody > tr");
   productRow = (product: Product): Locator =>
     this.page
       .getByRole("row")
@@ -44,6 +49,11 @@ class ProductPage {
 
   async deleteProduct(product: Product) {
     await this.productDeleteButton(product).click();
+  }
+
+  async filterForProduct(product: Product) {
+    await this.filterProductsInput().fill(product.name);
+    await this.filterProductsButton().click();
   }
 }
 

@@ -8,14 +8,15 @@ const product: Product = {
   dateStocked: "2023-04-01",
 };
 
-test("As a user I can delete a product", async ({ productPage }) => {
+test("As a user I filter for my product", async ({ productPage }) => {
   // Create the Product
   await productPage.goto();
   await productPage.addProduct(product);
 
-  // Delete the Product
-  await productPage.deleteProduct(product);
+  // Filter By Product name
+  await productPage.filterForProduct(product);
 
-  // Validate that it is not visible in the products grid
-  await expect(productPage.productRow(product)).not.toBeVisible();
+  // Validate that the product is the only visible product in the grid
+  await expect(productPage.productRow(product)).toBeVisible();
+  await expect(productPage.productRows()).toHaveCount(1);
 });

@@ -8,12 +8,6 @@ const product: Product = {
   dateStocked: "2023-04-01",
 };
 
-const updatedProduct: Product = {
-  name: `CC Product ${Math.floor(Math.random() * 100000)}`,
-  price: Math.floor(Math.random() * 100).toString(),
-  dateStocked: "2023-04-01",
-};
-
 test("As a user I can add a product", async ({ productPage }) => {
   // Create the Product
   await productPage.goto();

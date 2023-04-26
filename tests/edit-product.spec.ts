@@ -14,7 +14,7 @@ const updatedProduct: Product = {
   dateStocked: "2023-04-01",
 };
 
-test("As a user I can add edit a product", async ({ productPage }) => {
+test("As a user I can edit a product", async ({ productPage }) => {
   // Create the Product
   await productPage.goto();
   await productPage.addProduct(product);
