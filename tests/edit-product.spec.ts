@@ -14,11 +14,14 @@ const updatedProduct: Product = {
   dateStocked: "2023-04-01",
 };
 
-test("As a user I can add a product", async ({ productPage }) => {
+test("As a user I can add edit a product", async ({ productPage }) => {
   // Create the Product
   await productPage.goto();
   await productPage.addProduct(product);
 
-  // Validate that it is visible in the products grid
-  await expect(productPage.productRow(product)).toBeVisible();
+  // Update the Product
+  await productPage.editProduct(product, updatedProduct);
+
+  // Validate that the updated product is visible in the products grid
+  await expect(productPage.productRow(updatedProduct)).toBeVisible();
 });

@@ -2,7 +2,7 @@ import { Locator, Page } from "@playwright/test";
 
 import { Product } from "./product.types";
 
-class AddProductPage {
+class EnterProductInfoSection {
   readonly page: Page;
 
   constructor(page: Page) {
@@ -18,11 +18,7 @@ class AddProductPage {
   private submitButton = (): Locator => this.page.getByTestId("submit-form");
 
   // Actions
-  async goto(): Promise<void> {
-    await this.page.goto("/add-product");
-  }
-
-  async createProduct(product: Product): Promise<void> {
+  async submitProductInformation(product: Product): Promise<void> {
     await this.productNameInput().fill(product.name);
     await this.priceInput().fill(product.price);
     await this.dateStockedInput().fill(product.dateStocked);
@@ -30,4 +26,4 @@ class AddProductPage {
   }
 }
 
-export default AddProductPage;
+export default EnterProductInfoSection;
