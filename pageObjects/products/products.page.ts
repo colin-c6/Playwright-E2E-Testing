@@ -17,6 +17,8 @@ class ProductPage {
     this.page.getByPlaceholder("Filter by product name");
   private filterProductsButton = (): Locator =>
     this.page.getByTestId("filter-button");
+  private resetFiltersButton = (): Locator =>
+    this.page.getByTestId("reset-filter-button");
   productRows = () => this.page.locator("tbody > tr");
   productRow = (product: Product): Locator =>
     this.page
@@ -54,6 +56,10 @@ class ProductPage {
   async filterForProduct(product: Product) {
     await this.filterProductsInput().fill(product.name);
     await this.filterProductsButton().click();
+  }
+
+  async resetFilters() {
+    await this.resetFiltersButton().click();
   }
 }
 
