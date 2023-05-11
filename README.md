@@ -1,26 +1,43 @@
-# Playwright-E2E-Testing
-Using Playwright to write E2E tests for the publically available products web app https://commitquality.com/ (Thanks to commit quality for making this available)
+# Playwright E2E Testing
 
-# Installation
+This repository utilizes Playwright to write end-to-end (E2E) tests for the publicly available products web app [Commit Quality](https://commitquality.com/).  Thank you to Commit Quality for making this app accessible.
 
-* Install Node - https://nodejs.org/en/download/
-* Install git - https://gitforwindows.org/
-* Clone the repository and `cd` into the 'playwright-e2e-testing' folder
+## Installation
 
-> cd 'playwright-e2e-testing'
+Follow these steps to install the necessary dependencies:
 
-* Install node dependencies
+1. Install Node.js - Visit [https://nodejs.org/en/download/](https://nodejs.org/en/download/) and download Node.js.
+2. Install Git - Visit [https://gitforwindows.org/](https://gitforwindows.org/) and install Git.
+3. Clone the repository and navigate to the 'playwright-e2e-testing' folder:
 
-> npm install
+```shell
+cd playwright-e2e-testing
+```
 
-# How to Run Tests Locally
-From the 'playwright-e2e-testing' folder run the below command to execute all tests and view the results in the terminal.
-> npx playwright test
+4. Install the Node.js dependencies:
 
+```shell
+npm install
+```
 
-# Viewing Test Results
-From the 'playwright-e2e-testing' folder run the below command to view the latest HTML report run:
-> npx playwright show-report
+## How to Run Tests Locally
 
-# Tools & Libaries
+To execute all tests and view the results in the terminal, perform the following steps from the 'playwright-e2e-testing' folder:
+
+```shell
+npx playwright test
+```
+
+## Viewing Test Results
+
+To view the latest HTML report, run the following command from the 'playwright-e2e-testing' folder:
+
+```shell
+npx playwright show-report
+```
+
+## Tools & Libraries
+
+The following tools and libraries are used:
+
 * Playwright
